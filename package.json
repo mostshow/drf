@@ -1,0 +1,29 @@
+{
+  "name": "drfile",
+  "version": "0.1.1",
+  "description": "release project && delete redundant",
+  "main": "./lib/drfile.js",
+  "bin": {
+    "drf": "./bin/drf"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "delete",
+    "redundant",
+    "file"
+  ],
+  "author": "lyn",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "colors": "^1.1.2",
+    "fs-extra": "^1.0.0",
+    "jszip": "^3.1.3",
+    "lodash": "^4.17.4",
+    "moment": "^2.17.1",
+    "tar-pack": "^3.4.0",
+    "uuid": "^3.0.1"
+  }
+}

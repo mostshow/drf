@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+
+const drf= require('../lib/drfile');
+const args = process.argv.slice(2);
+const path = process.cwd();
+const run = function(args){
+    var options = {};
+    args.forEach(function (arg) {
+        if (startsWith(arg, "--compress")) {
+            options.compress = arg.split('=', 2)[1];
+        }
+        if (startsWith(arg, "--bakdir")) {
+            options.bakdir = arg.split('=', 2)[1];
+        }
+    });
+    function startsWith(str, prefix) {
+        return str.substr(0, prefix.length) == prefix;
+    }
+    if(args[0] === '-v'){
+        console.log('version is 0.0.1');
+        process.exit(1);
+    }else if(args[0] === '-h'){
+        console.log('Useage: drf [source] [destination] [--compress=none|zip|gz ] [--bak=bakdir]');
+        console.log('-v --version [show version]');
+        process.exit(1);
+    }else if(args.length < 2){
+        console.error('Usage: drf [source] [destination] [--compress=none|zip|gz ] [--bak=bakdir]');
+        process.exit(1);
+    }else{
+        drf(args[0], args[1],options, function (err) {
+            if (Array.isArray(err)) {
+                console.error('There were errors during the contrast.');
+                err.forEach(function (err) {
+                    console.error(err.stack || err.message);
+                });
+            }else if (err) {
+                console.error('An error has occurred.');
+                console.error(err.stack || err.message);
+            }
+        });
+    }
+};
+
+run(process.argv.slice(2))

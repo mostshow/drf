@@ -1,7 +1,7 @@
 {
   "name": "drfile",
   "version": "0.1.2",
-  "description": "release project && delete redundant",
+  "description": "publish project && delete redundant",
   "main": "index.js",
   "bin": {
     "drf": "./bin/drf"
@@ -14,7 +14,8 @@
     "redundant",
     "file",
     "release",
-    "project"
+    "project",
+    "publish"
   ],
   "contributors": [
       {

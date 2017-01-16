@@ -1,8 +1,8 @@
 {
   "name": "drfile",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "release project && delete redundant",
-  "main": "./lib/drfile.js",
+  "main": "index.js",
   "bin": {
     "drf": "./bin/drf"
   },

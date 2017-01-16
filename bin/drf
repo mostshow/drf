@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 
-const drf= require('../lib/drfile');
+const drf= require('../index.js');
 const args = process.argv.slice(2);
 const path = process.cwd();
 const run = function(args){

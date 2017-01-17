@@ -40,17 +40,22 @@ const run = function(args){
         if(options.deldiff || options.pack){
             args[1] ='null';
         }
-        drf(args[0], args[1],options, function (err) {
-            if (Array.isArray(err)) {
-                console.error('There were errors during the contrast.');
-                err.forEach(function (err) {
+        try {
+            drf(args[0], args[1],options, function (err) {
+                if (Array.isArray(err)) {
+                    console.error('There were errors during the contrast.');
+                    err.forEach(function (err) {
+                        console.error(err.stack || err.message);
+                    });
+                }else if (err) {
+                    console.error('An error has occurred.');
                     console.error(err.stack || err.message);
-                });
-            }else if (err) {
-                console.error('An error has occurred.');
-                console.error(err.stack || err.message);
-            }
-        });
+                }
+            });
+        } catch (e) {
+            console.error(err)
+            process.exit(1);
+        }
     }
 };
 

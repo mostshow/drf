@@ -1,6 +1,6 @@
 {
   "name": "drfile",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "publish project && delete redundant",
   "main": "index.js",
   "bin": {

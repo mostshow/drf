@@ -10,4 +10,4 @@ Installation
     npm install --save fs-extra
 Usage
 -----
-drf [source] [destination] [--compress=none|zip|gz ] [--bak=bakdir]'
+drf [source] [destination] [--compress=none|zip|gz ] [--bak=bakdir]

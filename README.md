@@ -7,7 +7,9 @@ Using the program release project can automatically remove redundant version of 
 Installation
 ------------
 
-    npm install --save drf
+    npm i drfile -g
+
+    Please try running this command again as root/Administrator.
 Usage
 -----
 drf [source] [destination] [--compress=none|zip|gz ] [--bak=bakdir]

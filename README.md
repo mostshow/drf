@@ -7,7 +7,7 @@ Using the program release project can automatically remove redundant version of 
 Installation
 ------------
 
-    npm install --save fs-extra
+    npm install --save drf
 Usage
 -----
 drf [source] [destination] [--compress=none|zip|gz ] [--bak=bakdir]

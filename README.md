@@ -12,4 +12,4 @@ Installation
     Please try running this command again as root/Administrator.
 Usage
 -----
-drf [source] [destination] [--compress=none|zip|gz ] [--bak=bakdir]
+drf [source] [destination] [--compress=none|zip|gz ][--pack] [--del] [--del-diff]  [--bak=bakdir] [--bak-name=bakname]

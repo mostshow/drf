@@ -7,18 +7,27 @@ const path = process.cwd();
 const run = function(args){
     var options = {};
     args.forEach(function (arg) {
+        //压缩
         if (startsWith(arg, "--compress")) {
             options.compress = arg.split('=', 2)[1];
         }
+        //备份目录
         if (startsWith(arg, "--bakdir")) {
             options.bakdir = arg.split('=', 2)[1];
         }
+        //打包
         if (startsWith(arg, "--pack")) {
             options.pack = true;
+        }
+
+        //解压缩包
+        if (startsWith(arg, "--unpack")) {
+            options.unpack = true;
         }
         if (startsWith(arg, "--del")) {
             options.del = true;
         }
+        //删除冗余文件
         if (startsWith(arg, "--del-diff")) {
             options.deldiff = true;
         }

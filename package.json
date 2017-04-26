@@ -18,10 +18,10 @@
     "publish"
   ],
   "contributors": [
-      {
-          "name": "lyndon",
-          "email": "codekaixuan@gmail.com"
-      }
+    {
+      "name": "lyndon",
+      "email": "codekaixuan@gmail.com"
+    }
   ],
   "author": "lyn <mostshow@163.com>",
   "license": "ISC",
@@ -41,6 +41,6 @@
     "uuid": "^3.0.1"
   },
   "engines": {
-      "node": "*"
+    "node": "*"
   }
 }

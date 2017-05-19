@@ -2,8 +2,21 @@
 
 
 const drf= require('../index.js');
+const program = require('commander');
 const args = process.argv.slice(2);
 const path = process.cwd();
+
+program
+  .version('0.4.3')
+  .usage('drf [source] [destination]  [options] or drf [source]  [--pack || --del-diff] ')
+  .option('--compress', 'Specify the compression way ')
+  .option('--bakdir', 'Specify the backup directory')
+  .option('--pack', 'compressing files')
+  .option('--unpack', 'decompressing files')
+  .option('--del', 'Delete redundant files automatically')
+  .option(' --del-diff', 'Delete redundant files ')
+  .option('--bak-name', 'Specify the backup name')
+  .parse(process.argv);
 const run = function(args){
     var options = {};
     args.forEach(function (arg) {
@@ -38,15 +51,10 @@ const run = function(args){
     function startsWith(str, prefix) {
         return str.substr(0, prefix.length) == prefix;
     }
-    if(args[0] === '-v'){
-        console.log('version is 0.3.6');
-        process.exit(1);
-    }else if(args[0] === '-h'){
-        console.log('Useage: drf [source] [destination] [--compress=none|zip|gz ][--pack] [--del] [--del-diff]  [--bak=bakdir][--unpack] [--bak-name=bakname]');
-        console.log('-v --version [show version]');
-        process.exit(1);
-    }else if(args.length < 2 && (!options.pack || !options.deldiff)){
-        console.error('Usage: drf [source] [destination] [--compress=none|zip|gz ][--pack] [--del] [--del-diff][--bak=bakdir] [--unpack] [--bak-name=bakname]');
+    if(args.length < 2 && (!options.pack || !options.deldiff)){
+
+        console.error(' Usage: drf drf [source] [destination]  [options] or drf [source]  [--pack || --del-diff]');
+
         process.exit(1);
     }else{
         if(options.deldiff || options.pack){

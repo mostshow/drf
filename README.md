@@ -1,21 +1,17 @@
+# drfile 
 
-Node.js: drf 
-=================
-
-Why?
-----
+[![npm](https://img.shields.io/badge/npm-v0.4.5-blue.svg)](https://www.npmjs.com/package/drfile)
 
 Using the program release project can automatically remove redundant version of the document and provide backup, rolled back
 
-Installation
-------------
+## Installation
 
 ```
     sudo npm i drfile -g
 
 ```
-Usage
------
+## Usage
+
 ```bash
     drf -h
     Usage: drf drf [source] [destination]  [options] or drf [source]  [--pack || --del-diff]
